@@ -12,9 +12,9 @@ Name="이름"
 Year="연"
 Month="월"
 Day="일"
-title="제목"
-content="내용"
-password="비밀번호!"
+title="너에게 쓰는 편지"
+content="파이팅입니다."
+password="1234"
 
 
 # *********************************************************************************************************************************************#
@@ -37,16 +37,16 @@ browser =driver
 # browser = webdriver.Chrome(options=options)
 browser.maximize_window() # 창 최대화
 
-url = "https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=top"
-browser.get(url)
-# url = "https://www.google.com/"
+# url = "https://www.airforce.mil.kr/user/indexSub.action?codyMenuSeq=156893223&siteId=last2&menuUIType=top"
 # browser.get(url)
+url = "https://www.google.com/"
+browser.get(url)
 
-# input_=browser.find_element(By.CLASS_NAME,'gLFyf') # 구글 입력창
-# input_.send_keys("공군기본군사훈련단 편지쓰기") #검색어 입력
-# input_.send_keys(Keys.ENTER) # 엔터 입력
-# search_=browser.find_element(By.CLASS_NAME,"yuRUbf") # 인터넷 편지를 감싸는 div 
-# search_.find_element(By.TAG_NAME,"a").click() # div 안의 a 링크 클릭
+input_=browser.find_element(By.CLASS_NAME,'gLFyf') # 구글 입력창
+input_.send_keys("공군기본군사훈련단 편지쓰기") #검색어 입력
+input_.send_keys(Keys.ENTER) # 엔터 입력
+search_=browser.find_element(By.CLASS_NAME,"yuRUbf") # 인터넷 편지를 감싸는 div 
+search_.find_element(By.TAG_NAME,"a").click() # div 안의 a 링크 클릭
 try:
     tbody=WebDriverWait(browser,10).until(EC.presence_of_element_located((By.TAG_NAME,'tbody'))) # 입력을 받는 tbody 
 except:
